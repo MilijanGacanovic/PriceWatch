@@ -1051,35 +1051,10 @@ button:focus-visible {
     font-weight: 500;
 }
 
-/* Trust badges */
-.trust-badges {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
-    padding: var(--spacing-sm) 0;
-}
-
-.trust-badge {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius);
-    font-size: 0.875rem;
-    font-weight: 500;
-    backdrop-filter: blur(10px);
-}
-
-.trust-badge-icon {
-    font-size: 1.25rem;
-}
-
 /* Guarantee badge for pricing */
 .guarantee-badge {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
@@ -1088,22 +1063,10 @@ button:focus-visible {
     border-radius: var(--border-radius-lg);
     font-weight: 600;
     font-size: 0.875rem;
-    margin: var(--spacing-md) auto;
+    margin-top: var(--spacing-md);
     box-shadow: var(--shadow-md);
-    max-width: fit-content;
 }
 
 .guarantee-icon {
     font-size: 1.25rem;
-}
-
-/* Section subtitle styling */
-.section-subtitle {
-    text-align: center;
-    font-size: 1.125rem;
-    color: var(--text-light);
-    margin-top: -1.5rem;
-    margin-bottom: var(--spacing-lg);
-    font-weight: 500;
-    line-height: 1.6;
 }
