@@ -35,8 +35,8 @@
   <!-- Price drop indicator -->
   <g transform="translate(510, 280)">
     <circle r="25" fill="#10b981" opacity="0.2"/>
-    <path d="M 0 8 L 6 0 L -6 0 Z" fill="#10b981"/>
-    <text x="0" y="-12" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle" font-weight="bold">-30%</text>
+    <path d="M 0 -8 L -6 0 L 6 0 Z" fill="#10b981"/>
+    <text x="0" y="16" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle" font-weight="bold">-30%</text>
   </g>
   
   <!-- Grid lines -->
