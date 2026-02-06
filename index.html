@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PriceWatch - Track prices and save money on your favorite products">
+    <title>PriceWatch - Never Miss a Price Drop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-content">
+                    <a href="#" class="logo">PriceWatch</a>
+                    <ul class="nav-links">
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Never Miss a Price Drop Again</h1>
+                <p>Track prices across hundreds of stores and get notified when products you love go on sale</p>
+                <a href="#pricing" class="cta-button">Start Saving Money</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Add Products</h3>
+                    <p>Paste the URL of any product from supported online stores and add it to your watchlist</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Set Your Price</h3>
+                    <p>Define your target price or get alerted for any price drop on your tracked items</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Notified</h3>
+                    <p>Receive instant email and push notifications when prices drop below your target</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Alerts</h3>
+                    <p>Real-time notifications via email, SMS, and push notifications when prices drop</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Price History</h3>
+                    <p>View detailed price charts and historical data to make informed buying decisions</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Multi-Store Support</h3>
+                    <p>Track products from hundreds of online retailers all in one convenient dashboard</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Pricing</h2>
+            <div class="pricing-toggle">
+                <span class="toggle-label" id="monthly-label">Monthly</span>
+                <button class="toggle-switch" id="pricing-toggle" aria-label="Toggle between monthly and annual pricing">
+                    <span class="toggle-slider"></span>
+                </button>
+                <span class="toggle-label" id="annual-label">Annual <span class="discount-badge">Save 2 months</span></span>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount" data-monthly="19" data-annual="190">19</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>Track up to 10 products</li>
+                        <li>Email notifications</li>
+                        <li>Price history (30 days)</li>
+                        <li>Basic support</li>
+                    </ul>
+                    <a href="https://stripe-payments-demo.appspot.com/" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount" data-monthly="49" data-annual="490">49</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>Track up to 100 products</li>
+                        <li>Email + SMS + Push notifications</li>
+                        <li>Price history (1 year)</li>
+                        <li>Priority support</li>
+                        <li>Price drop predictions</li>
+                    </ul>
+                    <a href="https://stripe-payments-demo.appspot.com/" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Growth</h3>
+                    <div class="price">
+                        <span class="currency">€</span>
+                        <span class="amount" data-monthly="99" data-annual="990">99</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>Unlimited products</li>
+                        <li>All notification types</li>
+                        <li>Unlimited price history</li>
+                        <li>24/7 Premium support</li>
+                        <li>Advanced analytics</li>
+                        <li>API access</li>
+                    </ul>
+                    <a href="https://stripe-payments-demo.appspot.com/" target="_blank" rel="noopener noreferrer" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Which stores are supported?</h3>
+                    <p>We support hundreds of popular online retailers including Amazon, eBay, Walmart, Best Buy, Target, and many more. Our system automatically detects and tracks prices from most major e-commerce platforms.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How often are prices updated?</h3>
+                    <p>We check prices multiple times per day for all tracked products. Premium plans get even more frequent updates, with prices checked every few hours to ensure you never miss a deal.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I cancel my subscription anytime?</h3>
+                    <p>Yes! You can cancel your subscription at any time with no questions asked. If you cancel, you'll continue to have access until the end of your billing period.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer a free trial?</h3>
+                    <p>Yes! All new users get a 14-day free trial with full access to Pro features. No credit card required to start your trial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PriceWatch</h4>
+                    <p>Track prices and save money on your favorite products.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PriceWatch. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
