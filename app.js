@@ -76,6 +76,38 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.removeChild(announcement);
         }, 1000);
     });
+
+    // Scroll-in fade animation
+    const fadeInSections = document.querySelectorAll('.fade-in-section');
+    
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (!prefersReducedMotion) {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Stop observing after animation
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        fadeInSections.forEach(section => {
+            observer.observe(section);
+        });
+    } else {
+        // If user prefers reduced motion, show all sections immediately
+        fadeInSections.forEach(section => {
+            section.classList.add('is-visible');
+        });
+    }
 });
 
 // Add screen reader only class to CSS dynamically if not already present
