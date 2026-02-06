@@ -134,15 +134,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const changesPerWeek = parseInt(changesSlider.value);
         const margin = parseInt(marginSlider.value);
 
-        // Validate inputs
+        // Validate inputs - use consistent defaults for any invalid input
+        const defaultReturn = { amount: 0, products: 100, changes: 10, margin: 10, monthlyEvents: 0, captureRate: 0 };
         if (isNaN(products) || products < 10 || products > 1000) {
-            return { amount: 0, products: 100, changes: 10, margin: 10 };
+            return defaultReturn;
         }
         if (isNaN(changesPerWeek) || changesPerWeek < 1 || changesPerWeek > 50) {
-            return { amount: 0, products: products, changes: 10, margin: 10 };
+            return defaultReturn;
         }
         if (isNaN(margin) || margin < 1 || margin > 50) {
-            return { amount: 0, products: products, changes: changesPerWeek, margin: 10 };
+            return defaultReturn;
         }
 
         // ROI Calculation Formula:
