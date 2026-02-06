@@ -128,28 +128,39 @@ document.addEventListener('DOMContentLoaded', () => {
         return '€' + amount.toLocaleString('en-US', { maximumFractionDigits: 0 });
     }
 
-    // Function to calculate ROI
+    // Function to calculate ROI using the specified formula
     function calculateROI() {
         const products = parseInt(productsSlider.value);
         const changesPerWeek = parseInt(changesSlider.value);
         const margin = parseInt(marginSlider.value);
 
-        // Calculation logic:
-        // Assume you can respond to price changes and make competitive adjustments
-        // Conservative estimate: 10% of price changes lead to competitive advantage
-        // Each competitive response protects/adds revenue equal to the margin
-        const WEEKS_PER_MONTH = 4;
-        const SUCCESS_RATE = 0.1; // 10% of price changes result in competitive advantage
+        // Validate inputs
+        if (isNaN(products) || products < 10 || products > 1000) {
+            return { amount: 0, products: 100, changes: 10, margin: 10 };
+        }
+        if (isNaN(changesPerWeek) || changesPerWeek < 1 || changesPerWeek > 50) {
+            return { amount: 0, products: products, changes: 10, margin: 10 };
+        }
+        if (isNaN(margin) || margin < 1 || margin > 50) {
+            return { amount: 0, products: products, changes: changesPerWeek, margin: 10 };
+        }
+
+        // ROI Calculation Formula:
+        // monthlyEvents = productsTracked * competitorChangesPerWeek * 4
+        // captureRate = 0.02 + min(0.08, competitorChangesPerWeek/100)  // 2%-10%
+        // estimatedMonthlyImpactEUR = monthlyEvents * captureRate * avgMarginEUR
         
-        const changesPerMonth = changesPerWeek * WEEKS_PER_MONTH;
-        const effectiveChanges = Math.floor(changesPerMonth * SUCCESS_RATE);
-        const monthlyImpact = effectiveChanges * margin;
+        const monthlyEvents = products * changesPerWeek * 4;
+        const captureRate = 0.02 + Math.min(0.08, changesPerWeek / 100);
+        const monthlyImpact = monthlyEvents * captureRate * margin;
 
         return {
-            amount: monthlyImpact,
+            amount: Math.round(monthlyImpact),
             products: products,
             changes: changesPerWeek,
-            margin: margin
+            margin: margin,
+            monthlyEvents: monthlyEvents,
+            captureRate: captureRate
         };
     }
 
@@ -173,8 +184,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const roi = calculateROI();
         roiAmount.textContent = formatCurrency(roi.amount);
         
-        // Update explanation text
-        roiExplanation.textContent = `By tracking ${products} product${products !== 1 ? 's' : ''} and responding to ${changes} price change${changes !== 1 ? 's' : ''} per week with an average margin of ${formatCurrency(margin)}, you could potentially save or add approximately ${formatCurrency(roi.amount)} per month by staying competitive.`;
+        // Update explanation text with calculation details
+        const captureRatePercent = (roi.captureRate * 100).toFixed(1);
+        roiExplanation.textContent = `With ${products} product${products !== 1 ? 's' : ''} tracked and ${changes} competitor price change${changes !== 1 ? 's' : ''} per week, you'll see approximately ${roi.monthlyEvents.toLocaleString()} monthly pricing events. At a ${captureRatePercent}% capture rate and €${margin} average margin, your estimated monthly revenue impact is ${formatCurrency(roi.amount)}.`;
 
         // Announce changes to screen readers
         announceROIUpdate(roi.amount);
