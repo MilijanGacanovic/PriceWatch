@@ -228,7 +228,7 @@ body {
     text-align: center;
     font-size: 1.125rem;
     color: var(--text-light);
-    margin-top: -2rem;
+    margin-top: -2rem; /* Pull intro text closer to heading for tighter visual grouping */
     margin-bottom: var(--spacing-lg);
 }
 

@@ -106,8 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Assume you can respond to price changes and make competitive adjustments
         // Conservative estimate: 10% of price changes lead to competitive advantage
         // Each competitive response protects/adds revenue equal to the margin
-        const changesPerMonth = changesPerWeek * 4;
-        const effectiveChanges = Math.floor(changesPerMonth * 0.1); // 10% success rate
+        const WEEKS_PER_MONTH = 4;
+        const SUCCESS_RATE = 0.1; // 10% of price changes result in competitive advantage
+        
+        const changesPerMonth = changesPerWeek * WEEKS_PER_MONTH;
+        const effectiveChanges = Math.floor(changesPerMonth * SUCCESS_RATE);
         const monthlyImpact = effectiveChanges * margin;
 
         return {
