@@ -15,28 +15,28 @@
   <rect x="50" y="50" width="500" height="300" rx="12" fill="url(#cardGradient)" stroke="#e5e7eb" stroke-width="2"/>
   
   <!-- Price chart line -->
-  <path d="M 80 280 Q 150 200, 200 220 T 320 160 T 440 200 T 520 140" 
+  <path d="M 80 140 Q 150 200, 200 180 T 320 220 T 440 200 T 520 260" 
         stroke="#4f46e5" 
         stroke-width="3" 
         fill="none" 
         stroke-linecap="round"/>
   
   <!-- Filled area under chart -->
-  <path d="M 80 280 Q 150 200, 200 220 T 320 160 T 440 200 T 520 140 L 520 280 L 80 280 Z" 
+  <path d="M 80 140 Q 150 200, 200 180 T 320 220 T 440 200 T 520 260 L 520 280 L 80 280 Z" 
         fill="url(#chartGradient)"/>
   
   <!-- Chart points -->
-  <circle cx="80" cy="280" r="5" fill="#4f46e5"/>
-  <circle cx="200" cy="220" r="5" fill="#4f46e5"/>
-  <circle cx="320" cy="160" r="5" fill="#4f46e5"/>
+  <circle cx="80" cy="140" r="5" fill="#4f46e5"/>
+  <circle cx="200" cy="180" r="5" fill="#4f46e5"/>
+  <circle cx="320" cy="220" r="5" fill="#4f46e5"/>
   <circle cx="440" cy="200" r="5" fill="#4f46e5"/>
-  <circle cx="520" cy="140" r="7" fill="#10b981"/>
+  <circle cx="520" cy="260" r="7" fill="#10b981"/>
   
   <!-- Price drop indicator -->
-  <g transform="translate(510, 100)">
+  <g transform="translate(510, 280)">
     <circle r="25" fill="#10b981" opacity="0.2"/>
-    <path d="M 0 -8 L 6 0 L -6 0 Z" fill="#10b981"/>
-    <text x="0" y="18" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle" font-weight="bold">-30%</text>
+    <path d="M 0 8 L 6 0 L -6 0 Z" fill="#10b981"/>
+    <text x="0" y="-12" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle" font-weight="bold">-30%</text>
   </g>
   
   <!-- Grid lines -->
