@@ -14,59 +14,38 @@
   <!-- Main chart card -->
   <rect x="50" y="50" width="500" height="300" rx="12" fill="url(#cardGradient)" stroke="#e5e7eb" stroke-width="2"/>
   
-  <!-- Price chart line -->
-  <path d="M 80 280 Q 150 200, 200 220 T 320 160 T 440 200 T 520 140" 
-        stroke="#4f46e5" 
-        stroke-width="3" 
-        fill="none" 
-        stroke-linecap="round"/>
-  
-  <!-- Filled area under chart -->
-  <path d="M 80 280 Q 150 200, 200 220 T 320 160 T 440 200 T 520 140 L 520 280 L 80 280 Z" 
-        fill="url(#chartGradient)"/>
-  
-  <!-- Chart points -->
-  <circle cx="80" cy="280" r="5" fill="#4f46e5"/>
-  <circle cx="200" cy="220" r="5" fill="#4f46e5"/>
-  <circle cx="320" cy="160" r="5" fill="#4f46e5"/>
-  <circle cx="440" cy="200" r="5" fill="#4f46e5"/>
-  <circle cx="520" cy="140" r="7" fill="#10b981"/>
-  
-  <!-- Price drop indicator -->
-  <g transform="translate(510, 100)">
-    <circle r="25" fill="#10b981" opacity="0.2"/>
-    <path d="M 0 -8 L 6 0 L -6 0 Z" fill="#10b981"/>
-    <text x="0" y="18" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle" font-weight="bold">-30%</text>
-  </g>
-  
   <!-- Grid lines -->
   <line x1="80" y1="100" x2="520" y2="100" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
   <line x1="80" y1="150" x2="520" y2="150" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
   <line x1="80" y1="200" x2="520" y2="200" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
   <line x1="80" y1="250" x2="520" y2="250" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
+  <line x1="80" y1="300" x2="520" y2="300" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
   
   <!-- Price labels -->
   <text x="60" y="105" font-family="Arial" font-size="12" fill="#6b7280">€99</text>
   <text x="60" y="155" font-family="Arial" font-size="12" fill="#6b7280">€79</text>
   <text x="60" y="205" font-family="Arial" font-size="12" fill="#6b7280">€59</text>
   <text x="60" y="255" font-family="Arial" font-size="12" fill="#6b7280">€39</text>
+  <text x="60" y="305" font-family="Arial" font-size="12" fill="#6b7280">€19</text>
   
-  <!-- Title -->
-  <text x="300" y="85" font-family="Arial" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">Price History</text>
+  <!-- Filled area under chart -->
+  <path d="M 80 180 Q 110 150, 140 160 Q 170 170, 200 140 Q 230 110, 260 180 Q 290 250, 320 220 Q 350 190, 380 160 Q 410 130, 440 200 Q 470 270, 500 240 L 500 300 L 80 300 Z" 
+        fill="url(#chartGradient)"/>
   
-  <!-- Bell notification icon -->
-  <g transform="translate(420, 60)">
-    <circle r="20" fill="#4f46e5" opacity="0.1"/>
-    <path d="M -6 -4 L -6 0 C -6 3.3 -3.3 6 0 6 C 3.3 6 6 3.3 6 0 L 6 -4 C 6 -7.3 3.3 -10 0 -10 C -3.3 -10 -6 -7.3 -6 -4 Z" 
-          fill="#4f46e5"/>
-    <ellipse cx="0" cy="8" rx="3" ry="2" fill="#4f46e5"/>
-    <circle cx="10" cy="-5" r="4" fill="#ef4444"/>
-  </g>
+  <!-- Price chart line with ups and downs -->
+  <path d="M 80 180 Q 110 150, 140 160 Q 170 170, 200 140 Q 230 110, 260 180 Q 290 250, 320 220 Q 350 190, 380 160 Q 410 130, 440 200 Q 470 270, 500 240" 
+        stroke="#4f46e5" 
+        stroke-width="3" 
+        fill="none" 
+        stroke-linecap="round"/>
   
-  <!-- Shopping tag icon -->
-  <g transform="translate(180, 60)">
-    <rect x="-8" y="-8" width="16" height="16" rx="2" fill="#06b6d4" opacity="0.1"/>
-    <path d="M -5 -5 L 5 -5 L 5 5 L -5 5 Z" fill="none" stroke="#06b6d4" stroke-width="2"/>
-    <circle cx="0" cy="0" r="2" fill="#06b6d4"/>
-  </g>
+  <!-- Chart points -->
+  <circle cx="80" cy="180" r="4" fill="#4f46e5"/>
+  <circle cx="140" cy="160" r="4" fill="#4f46e5"/>
+  <circle cx="200" cy="140" r="4" fill="#4f46e5"/>
+  <circle cx="260" cy="180" r="4" fill="#4f46e5"/>
+  <circle cx="320" cy="220" r="4" fill="#4f46e5"/>
+  <circle cx="380" cy="160" r="4" fill="#4f46e5"/>
+  <circle cx="440" cy="200" r="4" fill="#4f46e5"/>
+  <circle cx="500" cy="240" r="4" fill="#4f46e5"/>
 </svg>
