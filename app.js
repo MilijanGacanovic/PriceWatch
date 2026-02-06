@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         roiAmount.textContent = formatCurrency(roi.amount);
         
         // Update explanation text
-        roiExplanation.textContent = `By tracking ${products} product${products !== 1 ? 's' : ''} and responding to ${changes} price change${changes !== 1 ? 's' : ''} per month with an average margin of €${margin}, you could potentially save or add approximately ${formatCurrency(roi.amount)} per month by staying competitive.`;
+        roiExplanation.textContent = `By tracking ${roi.products} product${roi.products !== 1 ? 's' : ''} and responding to ${roi.changes} price change${roi.changes !== 1 ? 's' : ''} per month with an average margin of €${roi.margin}, you could potentially save or add approximately ${formatCurrency(roi.amount)} per month by staying competitive.`;
 
         // Announce changes to screen readers
         announceROIUpdate(roi.amount);
