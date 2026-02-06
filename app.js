@@ -110,6 +110,102 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ROI Calculator functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const productsSlider = document.getElementById('products-tracked');
+    const changesSlider = document.getElementById('competitor-changes');
+    const marginSlider = document.getElementById('avg-margin');
+    
+    const productsValue = document.getElementById('products-value');
+    const changesValue = document.getElementById('changes-value');
+    const marginValue = document.getElementById('margin-value');
+    
+    const roiAmount = document.getElementById('roi-amount');
+    const roiExplanation = document.getElementById('roi-explanation');
+
+    // Function to format currency
+    function formatCurrency(amount) {
+        return '€' + amount.toLocaleString('en-US', { maximumFractionDigits: 0 });
+    }
+
+    // Function to calculate ROI
+    function calculateROI() {
+        const products = parseInt(productsSlider.value);
+        const changesPerWeek = parseInt(changesSlider.value);
+        const margin = parseInt(marginSlider.value);
+
+        // Calculation logic:
+        // Assume you can respond to price changes and make competitive adjustments
+        // Conservative estimate: 10% of price changes lead to competitive advantage
+        // Each competitive response protects/adds revenue equal to the margin
+        const WEEKS_PER_MONTH = 4;
+        const SUCCESS_RATE = 0.1; // 10% of price changes result in competitive advantage
+        
+        const changesPerMonth = changesPerWeek * WEEKS_PER_MONTH;
+        const effectiveChanges = Math.floor(changesPerMonth * SUCCESS_RATE);
+        const monthlyImpact = effectiveChanges * margin;
+
+        return {
+            amount: monthlyImpact,
+            products: products,
+            changes: changesPerWeek,
+            margin: margin
+        };
+    }
+
+    // Function to update the ROI display
+    function updateROI() {
+        const products = parseInt(productsSlider.value);
+        const changes = parseInt(changesSlider.value);
+        const margin = parseInt(marginSlider.value);
+
+        // Update displayed values
+        productsValue.textContent = products;
+        changesValue.textContent = changes;
+        marginValue.textContent = formatCurrency(margin);
+
+        // Update ARIA attributes
+        productsSlider.setAttribute('aria-valuenow', products);
+        changesSlider.setAttribute('aria-valuenow', changes);
+        marginSlider.setAttribute('aria-valuenow', margin);
+
+        // Calculate and display ROI
+        const roi = calculateROI();
+        roiAmount.textContent = formatCurrency(roi.amount);
+        
+        // Update explanation text
+        roiExplanation.textContent = `By tracking ${products} product${products !== 1 ? 's' : ''} and responding to ${changes} price change${changes !== 1 ? 's' : ''} per week with an average margin of ${formatCurrency(margin)}, you could potentially save or add approximately ${formatCurrency(roi.amount)} per month by staying competitive.`;
+
+        // Announce changes to screen readers
+        announceROIUpdate(roi.amount);
+    }
+
+    // Function to announce ROI updates to screen readers
+    function announceROIUpdate(amount) {
+        const announcement = document.createElement('div');
+        announcement.setAttribute('role', 'status');
+        announcement.setAttribute('aria-live', 'polite');
+        announcement.className = 'sr-only';
+        announcement.textContent = `Estimated monthly revenue impact updated to ${formatCurrency(amount)}`;
+        document.body.appendChild(announcement);
+        
+        // Remove announcement after it's been read
+        setTimeout(() => {
+            if (announcement.parentNode) {
+                document.body.removeChild(announcement);
+            }
+        }, 1000);
+    }
+
+    // Add event listeners to sliders
+    productsSlider.addEventListener('input', updateROI);
+    changesSlider.addEventListener('input', updateROI);
+    marginSlider.addEventListener('input', updateROI);
+
+    // Initial calculation
+    updateROI();
+});
+
 // Add screen reader only class to CSS dynamically if not already present
 if (!document.querySelector('style[data-sr-only]')) {
     const style = document.createElement('style');

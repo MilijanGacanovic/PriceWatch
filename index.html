@@ -17,6 +17,7 @@
                     <ul class="nav-links">
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#features">Features</a></li>
+                        <li><a href="#roi-calculator">ROI Calculator</a></li>
                         <li><a href="#pricing">Pricing</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
@@ -80,6 +81,104 @@
                     <div class="feature-icon">🌐</div>
                     <h3>Multi-Store Support</h3>
                     <p>Track products from hundreds of online retailers all in one convenient dashboard</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section id="roi-calculator" class="roi-calculator">
+        <div class="container">
+            <h2>ROI Calculator</h2>
+            <p class="roi-intro">See how much value PriceWatch can bring to your business</p>
+            
+            <div class="roi-content">
+                <div class="roi-inputs">
+                    <div class="roi-input-group">
+                        <label for="products-tracked">
+                            <span class="label-text">Products Tracked</span>
+                            <span class="label-value" id="products-value">100</span>
+                        </label>
+                        <input 
+                            type="range" 
+                            id="products-tracked" 
+                            min="10" 
+                            max="1000" 
+                            value="100" 
+                            step="10"
+                            aria-label="Number of products tracked"
+                            aria-valuemin="10"
+                            aria-valuemax="1000"
+                            aria-valuenow="100"
+                        >
+                        <div class="range-labels">
+                            <span>10</span>
+                            <span>1000</span>
+                        </div>
+                    </div>
+
+                    <div class="roi-input-group">
+                        <label for="competitor-changes">
+                            <span class="label-text">Competitor Price Changes / Week</span>
+                            <span class="label-value" id="changes-value">10</span>
+                        </label>
+                        <input 
+                            type="range" 
+                            id="competitor-changes" 
+                            min="1" 
+                            max="50" 
+                            value="10" 
+                            step="1"
+                            aria-label="Number of competitor price changes per week"
+                            aria-valuemin="1"
+                            aria-valuemax="50"
+                            aria-valuenow="10"
+                        >
+                        <div class="range-labels">
+                            <span>1</span>
+                            <span>50</span>
+                        </div>
+                    </div>
+
+                    <div class="roi-input-group">
+                        <label for="avg-margin">
+                            <span class="label-text">Average Margin per Product</span>
+                            <span class="label-value" id="margin-value">€10</span>
+                        </label>
+                        <input 
+                            type="range" 
+                            id="avg-margin" 
+                            min="1" 
+                            max="50" 
+                            value="10" 
+                            step="1"
+                            aria-label="Average margin per product in euros"
+                            aria-valuemin="1"
+                            aria-valuemax="50"
+                            aria-valuenow="10"
+                        >
+                        <div class="range-labels">
+                            <span>€1</span>
+                            <span>€50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roi-output">
+                    <div class="roi-result">
+                        <div class="roi-icon">
+                            <img src="assets/calculator-icon.svg" alt="" aria-hidden="true">
+                        </div>
+                        <div class="roi-value">
+                            <span class="roi-label">Estimated Monthly Revenue Impact</span>
+                            <span class="roi-amount" id="roi-amount">€4,000</span>
+                        </div>
+                    </div>
+                    <p class="roi-explanation" id="roi-explanation">
+                        By tracking 100 products and responding to 10 price changes per week with an average margin of €10, 
+                        you could potentially save or add approximately €4,000 per month by staying competitive.
+                    </p>
+                    <a href="#pricing" class="see-plans-button">See Plans</a>
                 </div>
             </div>
         </div>
