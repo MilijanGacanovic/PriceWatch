@@ -1,72 +1,99 @@
-<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background elements -->
+<svg width="1200" height="600" viewBox="0 0 1200 600" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:0.3" />
-      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0.05" />
+    <!-- Soft gradient background -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f4ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e0f2fe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f9ff;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f9fafb;stop-opacity:1" />
+    
+    <!-- Chart area gradient -->
+    <linearGradient id="chartFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0.02" />
+    </linearGradient>
+    
+    <!-- Line gradient for extra depth -->
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- Main chart card -->
-  <rect x="50" y="50" width="500" height="300" rx="12" fill="url(#cardGradient)" stroke="#e5e7eb" stroke-width="2"/>
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bgGradient)"/>
   
-  <!-- Price chart line -->
-  <path d="M 80 280 Q 150 200, 200 220 T 320 160 T 440 200 T 520 140" 
-        stroke="#4f46e5" 
-        stroke-width="3" 
-        fill="none" 
-        stroke-linecap="round"/>
-  
-  <!-- Filled area under chart -->
-  <path d="M 80 280 Q 150 200, 200 220 T 320 160 T 440 200 T 520 140 L 520 280 L 80 280 Z" 
-        fill="url(#chartGradient)"/>
-  
-  <!-- Chart points -->
-  <circle cx="80" cy="280" r="5" fill="#4f46e5"/>
-  <circle cx="200" cy="220" r="5" fill="#4f46e5"/>
-  <circle cx="320" cy="160" r="5" fill="#4f46e5"/>
-  <circle cx="440" cy="200" r="5" fill="#4f46e5"/>
-  <circle cx="520" cy="140" r="7" fill="#10b981"/>
-  
-  <!-- Price drop indicator -->
-  <g transform="translate(510, 100)">
-    <circle r="25" fill="#10b981" opacity="0.2"/>
-    <path d="M 0 -8 L 6 0 L -6 0 Z" fill="#10b981"/>
-    <text x="0" y="18" font-family="Arial" font-size="10" fill="#10b981" text-anchor="middle" font-weight="bold">-30%</text>
+  <!-- Subtle grid lines -->
+  <g opacity="0.15">
+    <line x1="200" y1="100" x2="200" y2="500" stroke="#4f46e5" stroke-width="1"/>
+    <line x1="400" y1="100" x2="400" y2="500" stroke="#4f46e5" stroke-width="1"/>
+    <line x1="600" y1="100" x2="600" y2="500" stroke="#4f46e5" stroke-width="1"/>
+    <line x1="800" y1="100" x2="800" y2="500" stroke="#4f46e5" stroke-width="1"/>
+    <line x1="1000" y1="100" x2="1000" y2="500" stroke="#4f46e5" stroke-width="1"/>
+    
+    <line x1="100" y1="150" x2="1100" y2="150" stroke="#4f46e5" stroke-width="1"/>
+    <line x1="100" y1="250" x2="1100" y2="250" stroke="#4f46e5" stroke-width="1"/>
+    <line x1="100" y1="350" x2="1100" y2="350" stroke="#4f46e5" stroke-width="1"/>
+    <line x1="100" y1="450" x2="1100" y2="450" stroke="#4f46e5" stroke-width="1"/>
   </g>
   
-  <!-- Grid lines -->
-  <line x1="80" y1="100" x2="520" y2="100" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
-  <line x1="80" y1="150" x2="520" y2="150" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
-  <line x1="80" y1="200" x2="520" y2="200" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
-  <line x1="80" y1="250" x2="520" y2="250" stroke="#e5e7eb" stroke-width="1" opacity="0.5"/>
+  <!-- Main price tracking line chart -->
+  <!-- Path showing price trend with drop -->
+  <path 
+    d="M 150 400 
+       C 200 390, 250 380, 300 370
+       C 350 360, 400 340, 450 320
+       C 500 300, 550 290, 600 280
+       C 650 285, 700 295, 750 290
+       C 800 285, 850 270, 900 250
+       C 950 230, 1000 200, 1050 180"
+    stroke="url(#lineGradient)" 
+    stroke-width="4" 
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
   
-  <!-- Price labels -->
-  <text x="60" y="105" font-family="Arial" font-size="12" fill="#6b7280">€99</text>
-  <text x="60" y="155" font-family="Arial" font-size="12" fill="#6b7280">€79</text>
-  <text x="60" y="205" font-family="Arial" font-size="12" fill="#6b7280">€59</text>
-  <text x="60" y="255" font-family="Arial" font-size="12" fill="#6b7280">€39</text>
+  <!-- Filled area under the chart -->
+  <path 
+    d="M 150 400 
+       C 200 390, 250 380, 300 370
+       C 350 360, 400 340, 450 320
+       C 500 300, 550 290, 600 280
+       C 650 285, 700 295, 750 290
+       C 800 285, 850 270, 900 250
+       C 950 230, 1000 200, 1050 180
+       L 1050 500 L 150 500 Z"
+    fill="url(#chartFill)"
+  />
   
-  <!-- Title -->
-  <text x="300" y="85" font-family="Arial" font-size="18" fill="#1f2937" text-anchor="middle" font-weight="bold">Price History</text>
+  <!-- Data point markers -->
+  <circle cx="150" cy="400" r="8" fill="#4f46e5"/>
+  <circle cx="300" cy="370" r="8" fill="#4f46e5"/>
+  <circle cx="450" cy="320" r="8" fill="#4f46e5"/>
+  <circle cx="600" cy="280" r="8" fill="#4f46e5"/>
+  <circle cx="750" cy="290" r="8" fill="#4f46e5"/>
+  <circle cx="900" cy="250" r="8" fill="#06b6d4"/>
+  <circle cx="1050" cy="180" r="12" fill="#10b981"/>
   
-  <!-- Bell notification icon -->
-  <g transform="translate(420, 60)">
-    <circle r="20" fill="#4f46e5" opacity="0.1"/>
-    <path d="M -6 -4 L -6 0 C -6 3.3 -3.3 6 0 6 C 3.3 6 6 3.3 6 0 L 6 -4 C 6 -7.3 3.3 -10 0 -10 C -3.3 -10 -6 -7.3 -6 -4 Z" 
-          fill="#4f46e5"/>
-    <ellipse cx="0" cy="8" rx="3" ry="2" fill="#4f46e5"/>
-    <circle cx="10" cy="-5" r="4" fill="#ef4444"/>
+  <!-- Highlight rings on key points -->
+  <circle cx="900" cy="250" r="14" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.4"/>
+  <circle cx="1050" cy="180" r="18" fill="none" stroke="#10b981" stroke-width="2" opacity="0.4"/>
+  <circle cx="1050" cy="180" r="24" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.2"/>
+  
+  <!-- Price drop indicator (downward arrow) -->
+  <g transform="translate(1050, 140)">
+    <circle r="30" fill="#10b981" opacity="0.15"/>
+    <path d="M 0 -12 L 8 -4 L 3 -4 L 3 8 L -3 8 L -3 -4 L -8 -4 Z" fill="#10b981"/>
   </g>
   
-  <!-- Shopping tag icon -->
-  <g transform="translate(180, 60)">
-    <rect x="-8" y="-8" width="16" height="16" rx="2" fill="#06b6d4" opacity="0.1"/>
-    <path d="M -5 -5 L 5 -5 L 5 5 L -5 5 Z" fill="none" stroke="#06b6d4" stroke-width="2"/>
-    <circle cx="0" cy="0" r="2" fill="#06b6d4"/>
-  </g>
+  <!-- Decorative elements showing savings/tracking -->
+  <!-- Monitor/screen frame -->
+  <rect x="80" y="80" width="1040" height="440" rx="20" fill="none" stroke="#4f46e5" stroke-width="2" opacity="0.2"/>
+  
+  <!-- Small accent circles for visual interest -->
+  <circle cx="250" cy="480" r="4" fill="#4f46e5" opacity="0.3"/>
+  <circle cx="500" cy="490" r="3" fill="#06b6d4" opacity="0.3"/>
+  <circle cx="750" cy="485" r="4" fill="#4f46e5" opacity="0.3"/>
+  <circle cx="950" cy="490" r="3" fill="#10b981" opacity="0.3"/>
 </svg>
